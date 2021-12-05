@@ -1,15 +1,13 @@
 import Fastify from "fastify";
-import Router from './router.js';
-import Debug from '../utils/debug.js';
-import moment from "moment-timezone";
+import router from './router.js';
+import debug from '../utils/debug.js';
 
-const { PORT, TIMEZONE } = process.env;
-const log = Debug(`server:${moment().tz(TIMEZONE).format('DD-MM-YYYY HH:mm')}`);
+const log = debug(`server`);
 const fastify = Fastify();
 
-Router(fastify);
+router(fastify);
 
-fastify.listen(PORT, (err, address) => {
+fastify.listen(process.env.PORT, (err, address) => {
     if(err) throw err;
     log(`Server is now listening on ${address}`);
 })

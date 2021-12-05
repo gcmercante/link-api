@@ -1,6 +1,11 @@
+import debug from '../utils/debug.js';
+import pipedrive from './pipedrive.js';
+
+const log = debug('worker');
+
 class Worker {
     async sendDeals() {
-        
+        log('ok');
     }
 
     start() {
