@@ -21,12 +21,13 @@ class Sync {
                 apikey: process.env.BLING_TOKEN,
                 xml: encodeURIComponent(xml)
             };
+            console.log(encodeURIComponent(xml));
             promises.push(axios.post(this.blingUrl, request));
         });
 
         const result = await Promise.all(promises);
 
-        console.log('a',result);
+        return result;
     }
 
     async buildRequest(data) {

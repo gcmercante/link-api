@@ -15,6 +15,7 @@ export default function Router(server) {
     });
 
     server.get('/deals', async (request, reply) => {
-        await sync.getDealsToBling();
+        const result = await sync.getDealsToBling();
+        reply.send({ result });
     });
 }
