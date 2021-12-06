@@ -3,5 +3,5 @@ import './server/index.js';
 import Worker from './libs/worker.js';
 
 (() => {
-    Worker.start();
+    // Worker.start();
 })();

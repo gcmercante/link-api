@@ -1,5 +1,5 @@
 import debug from '../utils/debug.js';
-import pipedrive from './pipedrive.js';
+import sync from './sync.js';
 
 const log = debug('worker');
 
